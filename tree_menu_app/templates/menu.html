@@ -1,0 +1,21 @@
+<ul>
+    {% for item in items %}
+        <li>
+            <a style="text-decoration: none; 
+                {% if item.url == current_path %}
+                    font-weight: bold; text-decoration: underline;
+                {% endif %}" 
+                href="{{ item.url }}">
+                {{ item.title }}
+            </a>
+
+            {% if item.childrens.all %}
+                +
+            {% endif %}
+
+            {% if item.child_items %}
+                {% include 'menu.html' with items=item.child_items  %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
