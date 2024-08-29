@@ -20,6 +20,7 @@
 
 ```shell
 git clone https://github.com/pasha-danilevich/tree-menu.git
+cd tree-menu
 python -m venv venv
 venv/Scripts/activate
 python -m pip install --upgrade pip
